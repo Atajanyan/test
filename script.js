@@ -56,7 +56,7 @@ calc(1,2,'+')
 //ex4
 
 
-let arr1 = [
+let arr = [
     {name: 'Alice', job: 'Data Analyst', country: 'AU'},
     {name: 'Bob', job: 'Pilot', country: 'US'},
     {name: 'Lewis', job: 'Pilot', country: 'US'},
@@ -64,23 +64,19 @@ let arr1 = [
     {name: 'Jona', job: 'Painter', country: 'CA'},
     {name: 'Jeremy', job: 'Artist', country: 'SP'},
   ];
-  
   function groupe(arr, prop) {
-    let a = arr.map(e=>{
-      let b =  Object.keys(e)
-      for(let key of e){
-        if(prop == key ){
-            
+        let res = {};
+        for (let el of arr) {
+          if (res[el[prop]]) {
+            res[el[prop]].push(el);
+          } else {
+            res[el[prop]] = [];
+            res[el[prop]].push(el);
+          }
         }
+        return res;
       }
-
-    })
-  } 
-
-  groupe(arr1)
-
-
-
+      console.log(groupe(arr, "country"))
 
 
   //ex5
