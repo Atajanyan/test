@@ -19,15 +19,32 @@
 
 //2.  (+,-,*,/ operations).
 
+// function Calculator() {
+//      return function foo(oper1,oper2,operator){
+//         console.log(oper1+operator+oper2);
+//      }
+// }
+
+// let calc = new Calculator();
+// calc(1,2,'+')
+
 function Calculator() {
-     return function foo(oper1,oper2,operator){
-        console.log(oper1+operator+oper2);
-     }
+  return function foo(oper1,oper2,operator){
+    switch(operator){
+    case '+': console.log(oper1+oper2);
+    break;
+    case '-': console.log(oper1-oper2);
+    break;
+    case '*': console.log(oper1*oper2);
+    break;
+    case '/': console.log(oper1/oper2);
+    break
+    }
+  }
 }
 
 let calc = new Calculator();
 calc(1,2,'+')
-
 
 
 
@@ -56,27 +73,27 @@ calc(1,2,'+')
 //ex4
 
 
-let arr = [
-    {name: 'Alice', job: 'Data Analyst', country: 'AU'},
-    {name: 'Bob', job: 'Pilot', country: 'US'},
-    {name: 'Lewis', job: 'Pilot', country: 'US'},
-    {name: 'Karen', job: 'Software Eng', country: 'CA'},
-    {name: 'Jona', job: 'Painter', country: 'CA'},
-    {name: 'Jeremy', job: 'Artist', country: 'SP'},
-  ];
-  function groupe(arr, prop) {
-        let res = {};
-        for (let el of arr) {
-          if (res[el[prop]]) {
-            res[el[prop]].push(el);
-          } else {
-            res[el[prop]] = [];
-            res[el[prop]].push(el);
-          }
-        }
-        return res;
-      }
-      console.log(groupe(arr, "country"))
+// let arr = [
+//     {name: 'Alice', job: 'Data Analyst', country: 'AU'},
+//     {name: 'Bob', job: 'Pilot', country: 'US'},
+//     {name: 'Lewis', job: 'Pilot', country: 'US'},
+//     {name: 'Karen', job: 'Software Eng', country: 'CA'},
+//     {name: 'Jona', job: 'Painter', country: 'CA'},
+//     {name: 'Jeremy', job: 'Artist', country: 'SP'},
+//   ];
+//   function groupe(arr, prop) {
+//         let res = {};
+//         for (let el of arr) {
+//           if (res[el[prop]]) {
+//             res[el[prop]].push(el);
+//           } else {
+//             res[el[prop]] = [];
+//             res[el[prop]].push(el);
+//           }
+//         }
+//         return res;
+//       }
+//       console.log(groupe(arr, "country"))
 
 
   //ex5
